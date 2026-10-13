@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Brew Pass",
+    "slug": "brew-pass",
+    "version": "0.1.0",
+    "scheme": "brewpass",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": false,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.example.brewpass"
+    },
+    "android": {
+      "package": "com.example.brewpass",
+      "adaptiveIcon": {
+        "backgroundColor": "#F6F3EE"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
