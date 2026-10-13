@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Brew Pass mark (Dash)</title>
+  <path d="M18 22H48V36a15 15 0 0 1-30 0Z" fill="#5A6EE1"/>
+  <path d="M48 28h4a6 6 0 0 1 0 12h-3" fill="none" stroke="#5A6EE1" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9 26h5M3 34h11M9 42h5" fill="none" stroke="#151A36" stroke-width="4" stroke-linecap="round"/>
+</svg>

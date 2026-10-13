@@ -5,8 +5,14 @@
     "version": "0.1.0",
     "scheme": "brewpass",
     "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ECF5FA"
+    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.example.brewpass"
@@ -14,12 +20,14 @@
     "android": {
       "package": "com.example.brewpass",
       "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ECF5FA"
       }
     },
     "web": {
       "bundler": "metro",
-      "output": "single"
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",

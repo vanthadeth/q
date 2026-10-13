@@ -1,5 +1,6 @@
 import { router } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Logo } from '../../components/Logo';
 import { useColors, radius, space } from '../../lib/theme';
 import { FALLBACK_EARN_RULE } from '../../lib/points';
 
@@ -23,6 +24,7 @@ export default function HomeScreen() {
         >
           <Text style={{ color: c.fg, fontSize: 18 }}>≡</Text>
         </Pressable>
+        <Logo height={24} />
         <View style={styles.store}>
           <Text style={[styles.strong, { color: c.fg }]}>Central Station</Text>
           <Text style={[styles.note, { color: c.muted }]}>Pickup in about 6 min</Text>
