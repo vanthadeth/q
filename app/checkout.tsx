@@ -1,6 +1,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Mascot } from '../components/Mascot';
 import { useCart } from '../lib/cart';
 import { isSupabaseConfigured, supabase } from '../lib/supabase';
 import { radius, space, useColors } from '../lib/theme';
@@ -80,10 +81,13 @@ export default function CheckoutScreen() {
       </View>
 
       {qr ? (
+        <>
+          <Mascot pose="pleaseWait" size={116} label="Muggo waiting for your payment" />
         <View style={[styles.card, { backgroundColor: c.surface, borderColor: c.line }]}>
           <Text style={{ color: c.fg }}>Scan this QR in your Bakong or bank app.</Text>
           <Text selectable style={{ color: c.muted, fontSize: 12 }}>{qr}</Text>
         </View>
+        </>
       ) : (
         <Pressable
           accessibilityRole="button"
@@ -95,7 +99,12 @@ export default function CheckoutScreen() {
         </Pressable>
       )}
 
-      {status ? <Text style={{ color: c.accent }}>{status}</Text> : null}
+      {status ? (
+        <View style={styles.errorBox}>
+          <Mascot pose="sorry" size={104} label="Muggo looking sorry" />
+          <Text style={{ color: c.accent, textAlign: 'center' }}>{status}</Text>
+        </View>
+      ) : null}
       {slot ? <Text style={{ color: c.muted, fontSize: 13 }}>Pickup at {new Date(slot).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</Text> : null}
     </ScrollView>
   );
@@ -107,4 +116,5 @@ const styles = StyleSheet.create({
   card: { borderWidth: 1, borderRadius: radius.md, padding: space.lg, gap: space.sm },
   row: { flexDirection: 'row', alignItems: 'center', gap: space.md, paddingVertical: space.xs },
   btn: { borderRadius: radius.sm, paddingVertical: space.md, alignItems: 'center' },
+  errorBox: { alignItems: 'center', gap: space.sm },
 });

@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Logo } from '../../components/Logo';
+import { Mascot } from '../../components/Mascot';
 import { isSupabaseConfigured, supabase } from '../../lib/supabase';
 import { radius, space, useColors } from '../../lib/theme';
 
@@ -49,6 +50,7 @@ export default function AuthScreen() {
   return (
     <ScrollView style={{ backgroundColor: c.bg }} contentContainerStyle={styles.wrap}>
       <Logo height={40} />
+      <Mascot pose="hello" size={132} label="Muggo waving hello" />
       <Text style={[styles.title, { color: c.fg }]}>Sign up or sign in</Text>
       <Text style={{ color: c.muted }}>Enter your phone number. We send a code to confirm it.</Text>
 

@@ -42,6 +42,22 @@ Not built yet (see the plan):
 - Real menu and promotions, read from the database. Menu, deals and points on Home are examples, marked in code.
 - Tab icons (tabs use default placeholders).
 
+## Mascot
+
+Muggo, 11 poses, lives in `assets/mascot/*.svg` (sources, colors exactly as supplied). `npm run build:mascot` optimizes them with SVGO into `assets/mascot/generated.ts`. Use `<Mascot pose="hello" />` from `components/Mascot.tsx`.
+
+Muggo's limbs and steam are off-white, so in light mode the component draws a navy panel behind it. In dark mode there is no panel.
+
+| Pose | Where |
+|---|---|
+| hello | sign-up and sign-in |
+| orderAhead | Order tab |
+| pleaseWait | KHQR checkout, waiting for payment |
+| sorry | checkout errors |
+| specialOffer | Deals |
+| brewing, ready, thankYou | order status (screen not built yet) |
+| saving, myLuckyDay, fast | points, rewards and push art (later) |
+
 ## Notes
 
 - Prices are in riel (KHR).

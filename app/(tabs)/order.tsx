@@ -1,6 +1,7 @@
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Mascot } from '../../components/Mascot';
 import { useCart } from '../../lib/cart';
 import { pickupSlots } from '../../lib/pickup';
 import { SAMPLE_MENU } from '../../lib/menu';
@@ -16,6 +17,12 @@ export default function OrderScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: c.bg }}>
       <ScrollView contentContainerStyle={styles.wrap}>
+        {count === 0 ? (
+          <View style={styles.empty}>
+            <Mascot pose="orderAhead" size={104} label="Muggo holding an order list" />
+            <Text style={{ color: c.muted, flex: 1 }}>Pick a time, tap +, then pay. We start when you do.</Text>
+          </View>
+        ) : null}
         <Text style={[styles.label, { color: c.muted }]}>Pickup at</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.slots}>
           {slots.slice(0, 12).map((s) => {
@@ -81,6 +88,7 @@ export default function OrderScreen() {
 const styles = StyleSheet.create({
   wrap: { paddingHorizontal: space.lg, paddingVertical: space.lg, gap: space.md, paddingBottom: 96 },
   label: { fontSize: 12, letterSpacing: 0.5, textTransform: 'uppercase' },
+  empty: { flexDirection: 'row', alignItems: 'center', gap: space.md },
   slots: { gap: space.sm, paddingVertical: space.xs },
   slot: { borderWidth: 1, borderRadius: radius.sm, paddingHorizontal: space.md, paddingVertical: space.sm },
   card: { borderWidth: 1, borderRadius: radius.md, paddingHorizontal: space.lg },
