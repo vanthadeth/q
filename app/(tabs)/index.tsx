@@ -33,7 +33,7 @@ export default function HomeScreen() {
         <Text style={[styles.label, { color: c.muted }]}>Your points</Text>
         <Text style={[styles.big, { color: c.fg }]}>{EXAMPLE_POINTS.toLocaleString('en-US')}</Text>
         <View style={[styles.progress, { backgroundColor: c.soft }]}>
-          <View style={[styles.progressFill, { width: `${pct}%`, backgroundColor: c.accent }]} />
+          <View style={[styles.progressFill, { width: `${pct}%`, backgroundColor: c.accentFill }]} />
         </View>
         <Text style={[styles.note, { color: c.muted }]}>
           {POINTS_TO_NEXT_REWARD - EXAMPLE_POINTS} points to your next reward
@@ -50,7 +50,7 @@ export default function HomeScreen() {
         <Pressable
           accessibilityRole="button"
           onPress={() => router.push('/(tabs)/order')}
-          style={[styles.btn, { backgroundColor: c.accent, borderColor: c.accent, flex: 1 }]}
+          style={[styles.btn, { backgroundColor: c.accentFill, borderColor: c.accentFill, flex: 1 }]}
         >
           <Text style={[styles.btnText, { color: c.accentInk }]}>Order ahead</Text>
         </Pressable>

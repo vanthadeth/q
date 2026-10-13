@@ -41,7 +41,7 @@ export default function CodeScreen() {
         accessibilityRole="button"
         disabled={busy || code.length !== 6}
         onPress={verify}
-        style={[styles.btn, { backgroundColor: c.accent, opacity: busy || code.length !== 6 ? 0.6 : 1 }]}
+        style={[styles.btn, { backgroundColor: c.accentFill, opacity: busy || code.length !== 6 ? 0.6 : 1 }]}
       >
         <Text style={{ color: c.accentInk, fontWeight: '600' }}>{busy ? 'Checking…' : 'Confirm'}</Text>
       </Pressable>

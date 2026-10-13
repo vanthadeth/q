@@ -1,26 +1,29 @@
 import { useColorScheme } from 'react-native';
 
-// Design tokens from the approved interface proposal. Light and dark share one shape.
+// Brand palette: #ECF5FA and #5A6EE1 (light), #151A36 and #4556B3 (dark).
+// Neutrals and tints are derived from these. Brand colors are the source of truth.
 const light = {
-  bg: '#F6F3EE',
+  bg: '#ECF5FA',
   surface: '#FFFFFF',
-  fg: '#231A14',
-  muted: '#7A6D62',
-  line: '#E7E0D7',
-  accent: '#B8642A',
-  accentInk: '#FFFFFF',
-  soft: '#F1E6DA',
+  fg: '#151A36',
+  muted: '#5C6385',
+  line: '#D2E0EC',
+  accent: '#5A6EE1', // text, icons, and fills on light surfaces
+  accentFill: '#5A6EE1', // filled buttons
+  accentInk: '#FFFFFF', // text on filled buttons
+  soft: '#DDE4FA', // accent tint for chips and highlights
 };
 
 const dark: typeof light = {
-  bg: '#14100C',
-  surface: '#1E1812',
-  fg: '#F4EDE4',
-  muted: '#A39588',
-  line: '#322920',
-  accent: '#D9854A',
-  accentInk: '#14100C',
-  soft: '#2A211A',
+  bg: '#151A36',
+  surface: '#1C2347',
+  fg: '#ECF5FA',
+  muted: '#9AA3C7',
+  line: '#2B3462',
+  accent: '#8E9EF2', // lighter tint of #4556B3 so text stays readable on #151A36
+  accentFill: '#4556B3',
+  accentInk: '#FFFFFF',
+  soft: '#262E5C',
 };
 
 export type Colors = typeof light;

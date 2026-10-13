@@ -82,7 +82,7 @@ export default function AuthScreen() {
         accessibilityRole="button"
         disabled={busy || phone.trim().length < 8}
         onPress={sendCode}
-        style={[styles.btn, { backgroundColor: c.accent, opacity: busy || phone.trim().length < 8 ? 0.6 : 1 }]}
+        style={[styles.btn, { backgroundColor: c.accentFill, opacity: busy || phone.trim().length < 8 ? 0.6 : 1 }]}
       >
         <Text style={{ color: c.accentInk, fontWeight: '600' }}>{busy ? 'Sending…' : 'Send code'}</Text>
       </Pressable>

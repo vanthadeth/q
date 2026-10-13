@@ -54,7 +54,7 @@ export default function OrderScreen() {
                 accessibilityRole="button"
                 accessibilityLabel={`Add ${item.name}`}
                 onPress={() => add(item)}
-                style={[styles.addBtn, { backgroundColor: c.accent }]}
+                style={[styles.addBtn, { backgroundColor: c.accentFill }]}
               >
                 <Text style={{ color: c.accentInk, fontWeight: '700' }}>+</Text>
               </Pressable>
@@ -67,7 +67,7 @@ export default function OrderScreen() {
         accessibilityRole="button"
         disabled={count === 0}
         onPress={() => router.push({ pathname: '/checkout', params: { slot: selectedSlot ?? '' } })}
-        style={[styles.cartBar, { backgroundColor: count === 0 ? c.soft : c.accent }]}
+        style={[styles.cartBar, { backgroundColor: count === 0 ? c.soft : c.accentFill }]}
       >
         <Text style={{ color: count === 0 ? c.muted : c.accentInk, fontWeight: '600' }}>
           {count === 0 ? 'Add items to start' : `${count} item${count > 1 ? 's' : ''} · ${totalKhr.toLocaleString('en-US')} KHR`}

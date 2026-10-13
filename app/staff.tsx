@@ -78,7 +78,7 @@ export default function StaffScreen() {
             <Pressable
               accessibilityRole="button"
               onPress={() => advance(o)}
-              style={[styles.btn, { backgroundColor: c.accent }]}
+              style={[styles.btn, { backgroundColor: c.accentFill }]}
             >
               <Text style={{ color: c.accentInk, fontWeight: '600' }}>{ACTION_LABEL[o.status]}</Text>
             </Pressable>

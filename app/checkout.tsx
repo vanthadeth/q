@@ -89,7 +89,7 @@ export default function CheckoutScreen() {
           accessibilityRole="button"
           disabled={busy || lines.length === 0}
           onPress={pay}
-          style={[styles.btn, { backgroundColor: c.accent, opacity: busy || lines.length === 0 ? 0.6 : 1 }]}
+          style={[styles.btn, { backgroundColor: c.accentFill, opacity: busy || lines.length === 0 ? 0.6 : 1 }]}
         >
           <Text style={{ color: c.accentInk, fontWeight: '600' }}>{busy ? 'Starting payment…' : 'Show KHQR'}</Text>
         </Pressable>

@@ -14,7 +14,7 @@
     "android": {
       "package": "com.example.brewpass",
       "adaptiveIcon": {
-        "backgroundColor": "#F6F3EE"
+        "backgroundColor": "#ECF5FA"
       }
     },
     "web": {
