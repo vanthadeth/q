@@ -19,7 +19,7 @@ export default function OrderScreen() {
       <ScrollView contentContainerStyle={styles.wrap}>
         {count === 0 ? (
           <View style={styles.empty}>
-            <Mascot pose="orderAhead" size={112} label="Muggo holding an order list" />
+            <Mascot pose="orderAhead" size={124} label="Muggo holding an order list" />
             <Text style={{ color: c.muted, flex: 1 }}>Pick a time, tap +, then pay. We start when you do.</Text>
           </View>
         ) : null}

@@ -44,7 +44,7 @@ Not built yet (see the plan):
 
 ## Mascot
 
-Muggo is the 3D mascot, 12 poses as transparent WebP in `assets/mascot3d/` (about 40 KB each). Use `<Mascot pose="hello" />` from `components/Mascot.tsx`. The limbs are shaded, so it reads on light and dark with no backing panel.
+Muggo is the 3D mascot, 12 poses as transparent WebP in `assets/mascot3d/` (about 55 KB each, with a baked soft shadow). Use `<Mascot pose="hello" />` from `components/Mascot.tsx`. The limbs are shaded and each pose has a soft navy drop shadow baked in, so it stands out on light and stays quiet on dark.
 
 The supplied 1254 px PNGs (about 850 KB each) are not in the repo. To regenerate: `python3 scripts/build-mascot3d.py <dir with muggo-3d-*.png>` (needs Pillow).
 

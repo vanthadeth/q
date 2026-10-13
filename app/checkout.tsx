@@ -87,7 +87,7 @@ export default function CheckoutScreen() {
 
       {qr ? (
         <>
-          <Mascot pose="pleaseWait" size={132} label="Muggo waiting for your payment" />
+          <Mascot pose="pleaseWait" size={148} label="Muggo waiting for your payment" />
         <View style={[styles.card, { backgroundColor: c.surface, borderColor: c.line }]}>
           <Text style={{ color: c.fg }}>Scan this QR in your Bakong or bank app.</Text>
           <Text selectable style={{ color: c.muted, fontSize: 12 }}>{qr}</Text>
@@ -108,7 +108,7 @@ export default function CheckoutScreen() {
         <View style={styles.errorBox}>
           <Mascot
             pose={offline ? 'connectionLost' : 'sorry'}
-            size={132}
+            size={148}
             label={offline ? 'Muggo with no connection' : 'Muggo looking sorry'}
           />
           <Text style={{ color: c.accent, textAlign: 'center' }}>{status}</Text>

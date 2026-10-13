@@ -50,7 +50,7 @@ export default function AuthScreen() {
   return (
     <ScrollView style={{ backgroundColor: c.bg }} contentContainerStyle={styles.wrap}>
       <Logo height={40} />
-      <Mascot pose="hello" size={132} label="Muggo waving hello" />
+      <Mascot pose="hello" size={148} label="Muggo waving hello" />
       <Text style={[styles.title, { color: c.fg }]}>Sign up or sign in</Text>
       <Text style={{ color: c.muted }}>Enter your phone number. We send a code to confirm it.</Text>
 
