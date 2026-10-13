@@ -15,10 +15,12 @@ export default function CheckoutScreen() {
   const [status, setStatus] = useState<string | null>(null);
   const [qr, setQr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [offline, setOffline] = useState(false);
 
   async function pay() {
     setBusy(true);
     setStatus(null);
+    setOffline(false);
     try {
       if (!isSupabaseConfigured) {
         setStatus('Payment is not connected yet. Add Supabase keys to start testing.');
@@ -50,7 +52,10 @@ export default function CheckoutScreen() {
       setQr(data?.qr ?? null);
       clear();
     } catch (e) {
-      setStatus(e instanceof Error ? e.message : 'Could not start payment. Try again.');
+      const message = e instanceof Error ? e.message : '';
+      const lost = /network|failed to fetch|offline|timed? ?out/i.test(message);
+      setOffline(lost);
+      setStatus(lost ? 'No connection. Check your internet and try again.' : message || 'Could not start payment. Try again.');
     } finally {
       setBusy(false);
     }
@@ -82,7 +87,7 @@ export default function CheckoutScreen() {
 
       {qr ? (
         <>
-          <Mascot pose="pleaseWait" size={116} label="Muggo waiting for your payment" />
+          <Mascot pose="pleaseWait" size={132} label="Muggo waiting for your payment" />
         <View style={[styles.card, { backgroundColor: c.surface, borderColor: c.line }]}>
           <Text style={{ color: c.fg }}>Scan this QR in your Bakong or bank app.</Text>
           <Text selectable style={{ color: c.muted, fontSize: 12 }}>{qr}</Text>
@@ -101,7 +106,11 @@ export default function CheckoutScreen() {
 
       {status ? (
         <View style={styles.errorBox}>
-          <Mascot pose="sorry" size={104} label="Muggo looking sorry" />
+          <Mascot
+            pose={offline ? 'connectionLost' : 'sorry'}
+            size={132}
+            label={offline ? 'Muggo with no connection' : 'Muggo looking sorry'}
+          />
           <Text style={{ color: c.accent, textAlign: 'center' }}>{status}</Text>
         </View>
       ) : null}

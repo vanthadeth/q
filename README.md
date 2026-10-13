@@ -44,9 +44,9 @@ Not built yet (see the plan):
 
 ## Mascot
 
-Muggo, 11 poses, lives in `assets/mascot/*.svg` (sources, colors exactly as supplied). `npm run build:mascot` optimizes them with SVGO into `assets/mascot/generated.ts`. Use `<Mascot pose="hello" />` from `components/Mascot.tsx`.
+Muggo is the 3D mascot, 12 poses as transparent WebP in `assets/mascot3d/` (about 40 KB each). Use `<Mascot pose="hello" />` from `components/Mascot.tsx`. The limbs are shaded, so it reads on light and dark with no backing panel.
 
-Muggo's limbs and steam are off-white, so in light mode the component draws a navy panel behind it. In dark mode there is no panel.
+The supplied 1254 px PNGs (about 850 KB each) are not in the repo. To regenerate: `python3 scripts/build-mascot3d.py <dir with muggo-3d-*.png>` (needs Pillow).
 
 | Pose | Where |
 |---|---|
@@ -54,6 +54,7 @@ Muggo's limbs and steam are off-white, so in light mode the component draws a na
 | orderAhead | Order tab |
 | pleaseWait | KHQR checkout, waiting for payment |
 | sorry | checkout errors |
+| connectionLost | checkout when there is no connection |
 | specialOffer | Deals |
 | brewing, ready, thankYou | order status (screen not built yet) |
 | saving, myLuckyDay, fast | points, rewards and push art (later) |

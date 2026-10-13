@@ -17,7 +17,7 @@ export default function DealsScreen() {
           <Text style={[styles.title, { color: c.fg }]}>Deals</Text>
           <Text style={{ color: c.muted, fontSize: 13 }}>Examples. New deals appear here.</Text>
         </View>
-        <Mascot pose="specialOffer" size={104} label="Muggo holding a discount tag" />
+        <Mascot pose="specialOffer" size={112} label="Muggo holding a discount tag" />
       </View>
       <View style={[styles.card, { backgroundColor: c.surface, borderColor: c.line }]}>
         {DEALS.map((d, i) => (

@@ -1,12 +1,7 @@
-import { StyleSheet, useColorScheme, View } from 'react-native';
-import { SvgXml } from 'react-native-svg';
-import { MUGGO, type MuggoPose } from '../assets/mascot/generated';
-import { radius } from '../lib/theme';
+import { Image, StyleSheet } from 'react-native';
+import { MUGGO_3D, type MuggoPose } from '../assets/mascot3d';
 
-// Muggo's limbs, steam and sparkles are off-white, so on the light background they vanish.
-// In light mode Muggo sits on a navy panel (Muggo's own navy). In dark mode it needs none.
-const PANEL = '#191B34';
-
+// Muggo in 3D. The cream limbs are shaded, so it reads on light and dark without a backing panel.
 type Props = {
   pose: MuggoPose;
   size?: number;
@@ -14,24 +9,18 @@ type Props = {
 };
 
 export function Mascot({ pose, size = 140, label }: Props) {
-  const dark = useColorScheme() === 'dark';
-  const pad = Math.round(size * 0.06);
   return (
-    <View
+    <Image
+      source={MUGGO_3D[pose]}
+      resizeMode="contain"
       accessible
       accessibilityRole="image"
       accessibilityLabel={label ?? `Muggo, ${pose}`}
-      style={[
-        styles.box,
-        { width: size + pad * 2, height: size + pad * 2, padding: pad },
-        !dark && { backgroundColor: PANEL, borderRadius: radius.lg },
-      ]}
-    >
-      <SvgXml xml={MUGGO[pose]} width={size} height={size} />
-    </View>
+      style={[styles.img, { width: size, height: size }]}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  box: { alignItems: 'center', justifyContent: 'center', alignSelf: 'center' },
+  img: { alignSelf: 'center' },
 });

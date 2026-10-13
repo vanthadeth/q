@@ -9,7 +9,6 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:web": "expo export --platform web",
-    "build:mascot": "node scripts/build-mascot.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test --experimental-strip-types lib/__tests__/*.test.ts"
   },
@@ -34,7 +33,6 @@
   },
   "devDependencies": {
     "@types/react": "~18.3.12",
-    "svgo": "^3.3.5",
     "typescript": "~5.3.3"
   }
 }
